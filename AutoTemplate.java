@@ -64,8 +64,7 @@ public class AutoTemplate extends LinearOpMode{
         double ticks = (distanceMoving * (wheelMotor / wheelCircumfrance));
 
         robot.setPower(0, 0);
-
-
+        
         robot.demoMotor1.setTargetPosition((int) Math.round(ticks));
         robot.demoMotor2.setTargetPosition((int) Math.round(ticks));
 

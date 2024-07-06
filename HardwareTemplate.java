@@ -45,7 +45,7 @@ public class HardwareTemplate {
 
         //intialize color sensor
         colorSensor = hwMap.get(ColorSensor.class, "cs");
-       
+
 
     }
 
