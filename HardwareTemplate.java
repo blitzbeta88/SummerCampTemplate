@@ -28,36 +28,24 @@ public class HardwareTemplate {
 
     public void init(HardwareMap hwMap) {
 
-        //initialize motor
-        try {
-            demoMotor1 = hwMap.get(DcMotor.class, "demoMotor1");
-            demoMotor1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            demoMotor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            demoMotor1.setPower(0);
-        } catch (Exception p_exception) {
-            demoMotor1 = null;
-        }
-        try {
-            demoMotor2 = hwMap.get(DcMotor.class, "demoMotor2");
-            demoMotor2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-            demoMotor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            demoMotor2.setPower(0);
-        } catch (Exception p_exception) {
-            demoMotor2 = null;
-        }
+        //initialize motors
+        demoMotor1 = hwMap.get(DcMotor.class, "demoMotor1");
+        demoMotor1.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        demoMotor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        demoMotor1.setPower(0);
+
+        demoMotor2 = hwMap.get(DcMotor.class, "demoMotor2");
+        demoMotor2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        demoMotor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        demoMotor2.setPower(0);
+
 
         //initialize servo
-        try {
-            demoServo = hwMap.get(Servo.class, "demoServo");
-        } catch (Exception p_exception) {
-            demoServo = null;
-        }
+        demoServo = hwMap.get(Servo.class, "demoServo");
 
-        try {
-            colorSensor = hwMap.get(ColorSensor.class, "cs");
-        } catch (Exception p_excetion) {
-            colorSensor = null;
-        }
+        //intialize color sensor
+        colorSensor = hwMap.get(ColorSensor.class, "cs");
+       
 
     }
 
