@@ -64,7 +64,7 @@ public class AutoTemplate extends LinearOpMode{
         double ticks = (distanceMoving * (wheelMotor / wheelCircumfrance));
 
         robot.setPower(0, 0);
-        
+
         robot.demoMotor1.setTargetPosition((int) Math.round(ticks));
         robot.demoMotor2.setTargetPosition((int) Math.round(ticks));
 
@@ -111,7 +111,7 @@ public class AutoTemplate extends LinearOpMode{
     }
 
     //Method to determine Autonomous Color
-    public String determineAutonomousSensor(){
+    public String determineAutonomousSensor() {
 
         /*These constant values, i.e. 400, might have to be modified depending on the distance the
         sensor is from the color source */
