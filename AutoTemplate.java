@@ -48,6 +48,7 @@ public class AutoTemplate extends LinearOpMode{
             //Move forward to basket
 
             //Turn to basket
+            turning(9000, 0.5);
 
             //Get to ramp
 
@@ -107,7 +108,7 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         robot.demoMotor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        robot.demoMotor1.setPower(-speed);
+        robot.demoMotor1.setPower(speed);
         robot.demoMotor2.setPower(-speed);
         while (runtime.seconds() < time) {
 
@@ -124,8 +125,7 @@ public class AutoTemplate extends LinearOpMode{
     public void turning(int ticks, double speed) {
 
         robot.demoMotor1.setTargetPosition(ticks);
-        robot.demoMotor2.setTargetPosition(ticks);
-
+        robot.demoMotor2.setTargetPosition(-ticks);
 
         robot.demoMotor1.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.demoMotor2.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -133,7 +133,7 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.demoMotor2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.setPower(speed, speed);
+        robot.setPower(speed, -speed);
 
         while (opModeIsActive() && (robot.demoMotor1.isBusy())) {
 
