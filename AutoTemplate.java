@@ -30,7 +30,7 @@ public class AutoTemplate extends LinearOpMode{
         /**Code for Autonomous Color being red*/
         if (color.equals("red")) {
             //Move forward to cone
-            encoderMove(1, 0.5);
+            timeMove(1, 0.5);
 
             //Grab cone
 
@@ -45,7 +45,7 @@ public class AutoTemplate extends LinearOpMode{
         /**Code for Autonomous Color being blue*/
         if (color.equals("blue")) {
             //Move forward to cone
-            encoderMove(1, 0.5);
+            timeMove(1, 0.5);
 
             //Grab cone
 
