@@ -26,10 +26,12 @@ public class ColorSensorCalibration extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-            telemetry.addData("Red", robot.colorSensor.red());
-            telemetry.addData("Blue", robot.colorSensor.blue());
-            telemetry.addData("Green", robot.colorSensor.green());
-            telemetry.addData("Color", color);
+            telemetry.addData("Threshold: ", thresholdValue);
+            telemetry.addLine();
+            telemetry.addData("Red: ", robot.colorSensor.red());
+            telemetry.addData("Blue: ", robot.colorSensor.blue());
+            telemetry.addData("Green: ", robot.colorSensor.green());
+            telemetry.addData("Color: ", color);
             telemetry.update();
 
             if (gamepad1.a && !pressingA) {
