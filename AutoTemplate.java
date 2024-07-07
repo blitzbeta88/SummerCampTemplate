@@ -76,7 +76,7 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.demoMotor2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.setPower(speed, speed;
+        robot.setPower(speed, speed);
 
         while (opModeIsActive() && (robot.demoMotor1.isBusy())) {
 
