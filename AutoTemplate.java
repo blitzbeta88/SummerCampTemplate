@@ -3,10 +3,12 @@ package org.firstinspires.ftc.teamcode.SummerCampTemplate;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous (name = "AutoTemplate")
 public class AutoTemplate extends LinearOpMode{
 
+    private ElapsedTime runtime = new ElapsedTime();
     HardwareTemplate robot = HardwareTemplate.getInstance();
     String color = "";
 
@@ -57,11 +59,11 @@ public class AutoTemplate extends LinearOpMode{
     }
 
     //Method to move using encoders - distanceMoving is in inches
-    public void encoderMove(double distanceMoving, double speedMoving) {
+    public void encoderMove(double distance, double speed) {
 
         double wheelCircumfrance = 3.5 * Math.PI;
         double wheelMotor = 537.7;
-        double ticks = (distanceMoving * (wheelMotor / wheelCircumfrance));
+        double ticks = (distance * (wheelMotor / wheelCircumfrance));
 
         robot.setPower(0, 0);
 
@@ -74,7 +76,7 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.demoMotor2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.setPower(speedMoving, speedMoving);
+        robot.setPower(speed, speed;
 
         while (opModeIsActive() && (robot.demoMotor1.isBusy())) {
 
@@ -86,8 +88,29 @@ public class AutoTemplate extends LinearOpMode{
 
     }
 
+    //Method for moving using time
+    public void timeBased(double time, double speed) {
+
+        runtime.reset();
+
+        robot.demoMotor1.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        robot.demoMotor2.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        robot.demoMotor1.setPower(speed);
+        robot.demoMotor2.setPower(speed);
+        while (runtime.seconds() < time) {
+
+        }
+        robot.demoMotor1.setPower(0);
+        robot.demoMotor2.setPower(0);
+
+        robot.demoMotor1.setMode((DcMotor.RunMode.RUN_USING_ENCODER));
+        robot.demoMotor2.setMode((DcMotor.RunMode.RUN_USING_ENCODER));
+
+    }
+
     //Method for turning - separate for left and right?
-    public void turning(int ticks, double speedMoving) {
+    public void turning(int ticks, double speed) {
 
         robot.demoMotor1.setTargetPosition(ticks);
         robot.demoMotor2.setTargetPosition(ticks);
@@ -99,7 +122,7 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         robot.demoMotor2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        robot.setPower(speedMoving, speedMoving);
+        robot.setPower(speed, speed);
 
         while (opModeIsActive() && (robot.demoMotor1.isBusy())) {
 
