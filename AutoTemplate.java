@@ -152,9 +152,9 @@ public class AutoTemplate extends LinearOpMode{
 
         if (robot.colorSensor.red() > robot.colorSensor.blue() + 2000 && robot.colorSensor.red() > robot.colorSensor.green() ){
             color = "red";
-        }else if(robot.colorSensor.blue() > robot.colorSensor.red() + 2000 && robot.colorSensor.blue() > robot.colorSensor.green()){
+        } else if (robot.colorSensor.blue() > robot.colorSensor.red() + 2000 && robot.colorSensor.blue() > robot.colorSensor.green()){
             color = "blue";
-        }else{
+        } else {
 
         }
 
