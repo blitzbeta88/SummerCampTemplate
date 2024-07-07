@@ -89,7 +89,7 @@ public class AutoTemplate extends LinearOpMode{
     }
 
     //Method for moving using time
-    public void timeBased(double time, double speed) {
+    public void timeMove(double time, double speed) {
 
         runtime.reset();
 
