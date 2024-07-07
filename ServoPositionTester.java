@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @Disabled
 @TeleOp (name = "Servo Position Tester")
 public class ServoPositionTester extends LinearOpMode {
-    
+
     HardwareTemplate robot = HardwareTemplate.getInstance();
 
     public void runOpMode() {
@@ -23,7 +23,6 @@ public class ServoPositionTester extends LinearOpMode {
 
         boolean pressingA = false;
         boolean pressingB = false;
-
 
         while (opModeIsActive()) {
 

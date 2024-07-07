@@ -4,6 +4,7 @@ package org.firstinspires.ftc.teamcode.SummerCampTemplate;
 
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
@@ -37,6 +38,7 @@ public class HardwareTemplate {
         demoMotor2 = hwMap.get(DcMotor.class, "demoMotor2");
         demoMotor2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         demoMotor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        demoMotor2.setDirection(DcMotor.Direction.REVERSE);
         demoMotor2.setPower(0);
 
 
@@ -44,7 +46,7 @@ public class HardwareTemplate {
         demoServo = hwMap.get(Servo.class, "demoServo");
 
         //intialize color sensor
-        colorSensor = hwMap.get(ColorSensor.class, "cs");
+        colorSensor = hwMap.get(ColorSensor.class, "colorSensor");
 
 
     }

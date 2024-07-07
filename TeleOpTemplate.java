@@ -30,8 +30,8 @@ public class TeleOpTemplate extends LinearOpMode {
         while (opModeIsActive()) {
 
             //movement - Driver 1
-            double movement = gamepad1.left_stick_y;
-            double turning = gamepad1.right_stick_x;
+            double movement = -gamepad1.left_stick_x;
+            double turning = gamepad1.right_stick_y;
 
             double left = movement + turning;
             double right = movement - turning;
