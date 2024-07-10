@@ -116,12 +116,12 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor1.setPower(0);
         robot.demoMotor2.setPower(0);
 
-        robot.demoMotor1.setMode((DcMotor.RunMode.RUN_USING_ENCODER));
-        robot.demoMotor2.setMode((DcMotor.RunMode.RUN_USING_ENCODER));
+        robot.demoMotor1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        robot.demoMotor2.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
     }
 
-    //Method for turning - separate for left and right?
+    //Method for turning
     public void turning(int ticks, double speed) {
 
         robot.demoMotor1.setTargetPosition(ticks);
