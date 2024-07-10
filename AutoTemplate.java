@@ -73,9 +73,9 @@ public class AutoTemplate extends LinearOpMode{
     //Method to move using encoders - distanceMoving is in inches
     public void encoderMove(double distance, double speed) {
 
-        double wheelCircumfrance = 3.5 * Math.PI;
+        double wheelCircumference = 3.5 * Math.PI;
         double wheelMotor = 537.7;
-        double ticks = (distance * (wheelMotor / wheelCircumfrance));
+        double ticks = (distance * (wheelMotor / wheelCircumference));
 
         robot.setPower(0, 0);
 
