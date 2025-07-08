@@ -14,7 +14,7 @@ public class HardwareTemplate {
     public DcMotor demoMotor1;
     public DcMotor demoMotor2;
     public Servo demoServo;
-    public ColorSensor colorSensor;
+
 
     public static double maxSpeed = 1;
 
@@ -45,9 +45,7 @@ public class HardwareTemplate {
         //initialize servo
         demoServo = hwMap.get(Servo.class, "demoServo");
 
-        //intialize color sensor
-        colorSensor = hwMap.get(ColorSensor.class, "colorSensor");
-
+       
 
     }
 
