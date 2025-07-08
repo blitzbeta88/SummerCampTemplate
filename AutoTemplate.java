@@ -17,57 +17,16 @@ public class AutoTemplate extends LinearOpMode{
         robot.init(hardwareMap);
         /*After init*/
         telemetry.addData("Status", "Hello, Drivers!");
-
-        //Code to test color sensor
-        while(!isStarted() && !opModeIsActive()) {
-            color = determineAutonomousSensor();
-            telemetry.addData("Red", robot.colorSensor.red());
-            telemetry.addData("Blue", robot.colorSensor.blue());
-            telemetry.addData("Green", robot.colorSensor.green());
-            telemetry.addData("Color", color);
-            telemetry.update();
-        }
+   
 
         waitForStart();
 
         /*After play*/
 
-        //Move forward to color panel
+        //Move forward
         encoderMove(1, 0.1);
 
-        //Sense color panel
-        color = determineAutonomousSensor();
 
-        /**Code for Autonomous Color being red*/
-        if (color.equals("red")) {
-            //Move forward to cone
-            timeMove(1, 0.1);
-
-            //Grab cone
-
-            //Move forward to basket
-
-            //Turn to basket
-            turning(9000, 0.5);
-
-            //Get to ramp
-
-        }
-
-        /**Code for Autonomous Color being blue*/
-        if (color.equals("blue")) {
-            //Move forward to cone
-            timeMove(1, 0.1);
-
-            //Grab cone
-
-            //Move forward to basket
-
-            //Turn to basket
-
-            //Get to ramp
-
-        }
     }
 
     //Method to move using encoders - distanceMoving is in inches
@@ -144,21 +103,5 @@ public class AutoTemplate extends LinearOpMode{
         robot.demoMotor2.setMode((DcMotor.RunMode.RUN_USING_ENCODER));
     }
 
-    //Method to determine Autonomous Color
-    public String determineAutonomousSensor() {
-
-        /*These constant values, i.e. 400, might have to be modified depending on the distance the
-        sensor is from the color source */
-
-        if (robot.colorSensor.red() > robot.colorSensor.blue() + 2000 && robot.colorSensor.red() > robot.colorSensor.green() ){
-            color = "red";
-        } else if (robot.colorSensor.blue() > robot.colorSensor.red() + 2000 && robot.colorSensor.blue() > robot.colorSensor.green()){
-            color = "blue";
-        } else {
-
-        }
-
-        return color;
-    }
 
 }
