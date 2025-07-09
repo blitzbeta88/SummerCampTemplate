@@ -50,12 +50,12 @@ public class HardwareTemplate {
     }
 
     public void setPower(double motorDemo1, double motorDemo2) {
-        if (demoMotor1 != null) {
+    
             demoMotor1.setPower(Range.clip(motorDemo1, -maxSpeed, maxSpeed));
-        }
-        if (demoMotor2 != null) {
+        
+      
             demoMotor2.setPower(Range.clip(motorDemo2, -maxSpeed, maxSpeed));
-        }
+        
     }
 
 }
